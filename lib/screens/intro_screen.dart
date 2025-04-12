@@ -6,17 +6,32 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Intro Screen'),
-      ),
       body: Stack(
         children: [
-          Positioned.fill(child: Image.asset('assets/sea.jpg', fit: BoxFit.cover,)),
-          Center(
-        child: const Text(
-          'Welcome to the Intro Screen!',
-          style: TextStyle(fontSize: 24),
-        ),
+          Positioned.fill(
+            child: Image.asset(
+              'assets/sea.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
+          Align(
+            alignment: const Alignment(0, -0.5),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text(
+                  'Welcome to the Intro Screen!',
+                  style: TextStyle(fontSize: 24, color: Colors.white, shadows: [Shadow(blurRadius: 10, color: Colors.black, offset: Offset(0, 0))]),
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: const Alignment(0, 0.5),
+            child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('Start'),
+            ),
           ),
         ],
       ),
