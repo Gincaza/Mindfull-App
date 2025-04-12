@@ -9,7 +9,17 @@ class IntroScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Intro Screen'),
       ),
-      body: Center(child: const Text('Welcome to the Intro Screen!', style: TextStyle(fontSize: 24),)),
+      body: Stack(
+        children: [
+          Positioned.fill(child: Image.asset('assets/sea.jpg', fit: BoxFit.cover,)),
+          Center(
+        child: const Text(
+          'Welcome to the Intro Screen!',
+          style: TextStyle(fontSize: 24),
+        ),
+          ),
+        ],
+      ),
     );
   }
 }
